@@ -22,22 +22,33 @@ createList();
 
 //insert list items into DOm
 function createList() {
-    [...richestPeople].forEach((person, index) => {
-        const listItem = document.createElement('li');
+    [...richestPeople]
+        //для каждого элемента создаем свойства 
+        //с именем и номером рандомным
+        .map(a => ({ value: a, sort: Math.random() }))
+        //сортируем в соответсвии с рандомными значениями
+        //которые получены выше дял каждого элемента
+        .sort((a, b) => a.sort - b.sort)
+        //возращаем знаечения каждого элемента массива
+        .map(a => a.value )
+        .forEach((person, index) => {
 
-        listItem.setAttribute('data-index', index);
+            const listItem = document.createElement('li');
+                
 
-        listItem.innerHTML = `
-        <span class="number">${index + 1}</span>
-        <div class="draggable" draggable="true">
-            <p class="person-name">${person}</p>
-            <i class="fas fa-grip-lines"></i>
-        </div>
-        `
+            listItem.setAttribute('data-index', index);
 
-        listItems.push(listItem);
+            listItem.innerHTML = `
+            <span class="number">${index + 1}</span>
+            <div class="draggable" draggable="true">
+                <p class="person-name">${person}</p>
+                <i class="fas fa-grip-lines"></i>
+            </div>
+            `
 
-        draggableList.appendChild(listItem)
-    })
+            listItems.push(listItem);
+
+            draggableList.appendChild(listItem)
+        })
     
 }

@@ -1,3 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+* {
+  box-sizing: border-box; }
 
+body {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  font-family: "Lato", sans-serif; }
+  body .draggable-list {
+    border: 1px solid #e3e5e4;
+    color: #34444f;
+    padding: 0;
+    list-style-type: none; }
+    body .draggable-list li {
+      background-color: #fff;
+      display: flex;
+      flex: 1; }
+      body .draggable-list li:not(:last-of-type) {
+        border-bottom: 1px solid #e3e5e4; }
+      body .draggable-list li.right {
+        color: #3ae374; }
+      body .draggable-list li.wrong {
+        color: #ff3a3a; }
+      body .draggable-list li.over .draggable {
+        background-color: #eaeaea; }
+    body .draggable-list .number {
+      background-color: #c3c7c8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      height: 60px;
+      width: 60px; }
+    body .draggable-list .person-name {
+      margin: 0 20px 0 0; }
+    body .draggable-list .draggable {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px;
+      flex: 1; }
+  body .check-btn {
+    background-color: #c3c7c8;
+    border: none;
+    color: #34444f;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer; }
+    body .check-btn:active {
+      transform: scale(0.98); }
+    body .check-btn:focus {
+      outline: none; }
 
 /*# sourceMappingURL=styles.css.map */
