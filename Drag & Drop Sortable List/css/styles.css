@@ -30,6 +30,7 @@ body {
         background-color: #eaeaea; }
     body .draggable-list .number {
       background-color: #c3c7c8;
+      color: #34444f !important;
       display: flex;
       align-items: center;
       justify-content: center;
